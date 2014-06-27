@@ -1,0 +1,17 @@
+﻿<!--
+// This task disable doc warnings in the auto-generated XamlTypeInfo.g.cs file,
+// and also hides the public class from intellisense.
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<UsingTask TaskName="XamlTypeInfoBuildTask"
+				AssemblyFile="$(MSBuildThisFileDirectory)XamlBuildTasks.dll" />
+
+	<Target Name="MyBuildTask"
+					AfterTargets="MarkupCompilePass2"
+					BeforeTargets="CoreCompile"
+				>
+		<XamlTypeInfoBuildTask IntermediateOutputPath="$(IntermediateOutputPath)" />
+
+	</Target>
+</Project>
